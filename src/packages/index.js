@@ -24,7 +24,7 @@ const install = app => {
   plugins.forEach(plugin => app.use(plugin))
 }
 
-if (window.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(install)
 }
 

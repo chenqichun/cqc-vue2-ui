@@ -6642,6 +6642,10 @@ var install = function install(app) {
   });
 };
 
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(install);
+}
+
 /* harmony default export */ var src_packages = ({
   install: install
 });
