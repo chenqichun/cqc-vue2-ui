@@ -1,38 +1,36 @@
 {
   "name": "cqc-vue2-ui",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
-  "author": "cqc",
-  "keywords": ["vue2-ui"],
+  "main": "./libUI/cqc-vue2-ui.umd.min.js",
+  "author": "chenqichun<1069012191@qq.com>",
+  "license": "ISC",
+  "keywords": [
+    "vue2",
+    "ui",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenqichun/cqc-vue2-ui.git"
+  },
+  "description": "the ui lib of vue2",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test": "karma start",
-    "lib": "vue-cli-service build --target lib --name cqc-vue2-ui ./src/packages/index.js"
+    "build": "vue-cli-service build --target lib --name cqc-vue2-ui ./src/packages/index.js && vue-cli-service build --all --no-clean"
   },
-  "main": "./dist/cqc-vue2-ui.umd.min.js",
   "dependencies": {
-    "core-js": "^3.6.5",
-    "lodash": "^4.17.21",
-    "v-click-outside": "^3.1.2",
-    "vue": "^2.6.11"
+    "core-js": "^3.8.3",
+    "highlight.js": "^11.5.1",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-unit-mocha": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/test-utils": "^1.3.0",
-    "karma": "^6.3.12",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-mocha": "^2.0.1",
-    "karma-sourcemap-loader": "^0.3.8",
-    "karma-spec-reporter": "0.0.33",
-    "karma-webpack": "^5.0.0",
-    "mocha": "^9.2.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "vue-template-compiler": "^2.6.14"
   }
 }

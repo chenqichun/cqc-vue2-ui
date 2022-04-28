@@ -8,7 +8,7 @@ npm install cqc-vue2-ui
 ## usage
 ```
   import cqcUi from 'cqc-vue2-ui'
-  import 'cqc-vue2-ui/dist/cqc-vue2-ui.css'
+  import 'cqc-vue2-ui/cqc-vue2-ui.css'
 
   Vue.use(cqcUi)
 ```

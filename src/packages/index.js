@@ -1,37 +1,46 @@
-// 所有组件的入口
+import './base/index.js';
+import LoadingIcon from './loading-icon/index.js'
+import Button from './button/index.js'
+import ButtonGroup from './button-group/index.js'
+import Progress from './progress/index.js'
+import Message from './message/index.js'
+import DragList from './drag-list/index.js'
+import Carousel from './carousel/index.js'
+import CarouselItem from './carousel-item/index.js'
+import PreviewImg from './preview-img/index.js'
+import SignBoard from './sign-board/index.js'
 
-// import Button from './button.vue';
-// import Icon from './icon.vue'
-// import IconLoading from "./icon-loading.vue"
-// import ButtonGroup from './button-group.vue'
-import infiniteScroll from './infiniteScroll';
-
-const install = (Vue) => {
-  // Vue.component(Button.name, Button)
-  // Vue.component(Icon.name, Icon)
-  // Vue.component(IconLoading.name, IconLoading)
-  // Vue.component(ButtonGroup.name, ButtonGroup)
-  Vue.directive(infiniteScroll.name, infiniteScroll)
-  /* 可以使用require.context(a,b,c)快速导入
-      参数a -- 读取路径
-      参数b -- 是否遍历子目录，true, false
-      参数c -- 匹配的正则
-  */
-  const requireComponents = require.context('./', true, /\.vue/);
-  // requireComponents.keys() 拿到.vue文件的路径
-  requireComponents.keys().forEach(path => {
-    const component = requireComponents(path).default // 拿到组件
-    Vue.component(component.name, component)
-  })
+const plugins = [
+  LoadingIcon,
+  Button,
+  ButtonGroup,
+  Progress,
+  DragList,
+  Carousel,
+  CarouselItem,
+  SignBoard
+]
+const install = app => {
+  plugins.forEach(plugin => app.use(plugin))
 }
 
-// 有可能组件会通过script标签的方式引入
-//<script src='http://xxxx/cqc-ui'></script>
-
-if (typeof window.Vue !== 'undefined') {
-  install(Vue) // 全局直接通过script引入的方式会默认调用install方法
+if (window.Vue) {
+  window.Vue.use(install)
 }
 
 export default {
   install
+}
+
+export {
+  LoadingIcon,
+  Button,
+  ButtonGroup,
+  Progress,
+  Message,
+  PreviewImg,
+  DragList,
+  Carousel,
+  CarouselItem,
+  SignBoard
 }
